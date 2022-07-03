@@ -5,8 +5,8 @@ import com.blamejared.crafttweaker.api.bracket.CommandStringDisplayable;
 import com.blamejared.crafttweaker.api.data.MapData;
 import com.blamejared.crafttweaker.platform.Services;
 import com.blamejared.crafttweaker_annotations.annotations.Document;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import org.openzen.zencode.java.ZenCodeType;
 
@@ -24,7 +24,7 @@ public interface IFluidStack extends CommandStringDisplayable {
      * @return A MCResourceLocation representing the registry name.
      */
     @ZenCodeType.Getter("registryName")
-    default Identifier getRegistryName() {
+    default ResourceLocation getRegistryName() {
 
         return Services.REGISTRY.getRegistryKey(getFluid());
     }
